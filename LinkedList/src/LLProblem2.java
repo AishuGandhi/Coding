@@ -11,7 +11,7 @@ public class LLProblem2 {
 		System.out.println("Enter number:");
 		Integer num = sc.nextInt();
 		int f = 0;
-		LL.Node tmp = list.head;
+		Node tmp = list.head;
 		if(list.head ==null)
 		{
 			System.out.println("No data to delete.List is empty");
@@ -21,7 +21,7 @@ public class LLProblem2 {
 				f = 1;
 				System.out.println("Data found Successfully!!!");
 				// Delete all nodes greater than found Node
-				LL.Node curr = list.head.next,
+				Node curr = list.head.next,
 						prev=list.head;
 				while (prev != null && curr != null) {
 					if (prev == list.head && num < prev.data) {

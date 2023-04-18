@@ -1,0 +1,30 @@
+//To merge 2 sorted list and sort them with given head of 2 lists
+SinglyLinkedListNode curr, tmp=   head1;
+         //Merging the list
+          while(tmp.next!=null)
+          {
+              tmp = tmp.next;
+          }
+          tmp.next = head2;
+          head2=null;
+           //Sort the list
+         tmp = head1;
+          curr = head1;  
+         while(curr!= null)
+         {
+         while(tmp!= null)
+         {
+             if(tmp.data < curr.data)
+             {
+                 int d = tmp.data;
+                 tmp.data = curr.data;
+                 curr.data = d;
+                 //swap pointers
+                 
+             }
+             tmp = tmp.next;
+         }
+           tmp = curr.next;
+           curr = curr.next;
+         }
+          return  head1;

@@ -11,7 +11,7 @@ public class LLProblem1 {
 		Integer num = sc.nextInt();
 		int index = 1;
 		int f = 0;
-		LL.Node tmp = list.head;
+		Node tmp = list.head;
 		while (tmp != null) {
 			if (num == tmp.data) {
 				f = 1;
@@ -49,7 +49,6 @@ public class LLProblem1 {
 				break;
 			case 3:
 				list.addLast();
-
 				break;
 			// Done with operations show list
 			case 4:
