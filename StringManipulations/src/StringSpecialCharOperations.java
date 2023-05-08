@@ -49,7 +49,16 @@ public class StringSpecialCharOperations {
 		System.out.println(op.removeSpecialCharsFromString("This#string%contains^special*characters&."));
 		System.out.println(op.revereStringWithoutSpecialChars("This#string%contains^special*characters&."));
 		System.out.println(op.removeNumbersFromString("This#string%contains^77special*characters&.90"));
-
+		String str = "A man, a plan, a canal: Panama",revereseString="";
+		String replace = str.replaceAll("[^a-zA-Z0-9]","");
+		 System.out.println(replace);
+		 int i = str.length() -1;
+	        while(i>=0)
+	        {
+	            revereseString = revereseString + str.charAt(i);
+	            i--;
+	        }
+		 //if(revereseString.equalsIgnoreCase(str))
 	}
 
 }

@@ -26,6 +26,16 @@ public class BinaryTreesMain {
 		System.out.println(bt.heightOfTree(root));
 		System.out.print("\nCount Of Leaf Nodes in a tree:");
 		System.out.println(bt.countNumberOfLeafNodes(root));
+		
+		/*System.out.println("\nRevere Level Order Traversal");
+		bt.reverseLevelOrder(root);*/
+		System.out.println("\nFind parent of Node 3");
+		System.out.println("Parent of " + 3 + " is " + bt.findParent(root, 3, null).data);
+		
+		System.out.println("\nTransform Tree to Sum of Trees");
+		bt.toSumTree(root);
+		bt.inOrder(root);
+
 
 	}
 

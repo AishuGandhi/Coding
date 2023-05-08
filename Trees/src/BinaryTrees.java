@@ -6,7 +6,7 @@ public class BinaryTrees {
 
 	int index = -1;
 	int sum = 0;
-
+    ArrayList arr = new ArrayList<Integer>();
 	// Create Tree
 	public Node buildTree(int[] nodes) {
 		index++;
@@ -24,6 +24,7 @@ public class BinaryTrees {
 		if (root == null)
 			return;
 		System.out.print(root.data + " ");
+		arr.add(root.data);
 		preOrder(root.left);
 		preOrder(root.right);
 
@@ -90,24 +91,62 @@ public class BinaryTrees {
 		int rightSum = sumOfNodes(root.right);
 		return leftSum + rightSum + root.data;
 	}
+
 	public int heightOfTree(Node root) {
 		if (root == null)
 			return 0;
-		int leftHeight= heightOfTree(root.left);
+		int leftHeight = heightOfTree(root.left);
 		int rightHeight = heightOfTree(root.right);
-		return leftHeight > rightHeight ? leftHeight+1:rightHeight+1;
+		return leftHeight > rightHeight ? leftHeight + 1 : rightHeight + 1;
 	}
 
 	public int countNumberOfLeafNodes(Node root) {
-	
+
 		if (root == null)
 			return 0;
 		if (root.left == null && root.right == null)
 			return 1;
 
-		return countNumberOfLeafNodes(root.left)+ countNumberOfLeafNodes(root.right);
+		return countNumberOfLeafNodes(root.left) + countNumberOfLeafNodes(root.right);
+	}
+
+	//O(n)
+	public void findParent(Node root,int val,int parent)
+	{
+		if(root == null)
+			return;
+		if(root.data == val)
+			System.out.println("Parent of "+val+" is "+parent);
+		else
+		{
+	        // Recursive calls for the children
+	        // of the current node
+	        // Current node is now the new parent
+			findParent(root.left,val,root.data);
+		    findParent(root.right,val,root.data);
+		}
+		
+		
 	}
 	
+	//Transform to Sum Tree
+	int toSumTree(Node node)
+    {
+        // Base case
+        if (node == null)
+            return 0;
+  
+        // Store the old value
+        int old_val = node.data;
+  
+        // Recursively call for left and right subtrees and store the sum
+        // as new value of this node
+        node.data = toSumTree(node.left) + toSumTree(node.right);
+  
+        // Return the sum of values of nodes in left and right subtrees
+        // and old_value of this node
+        return node.data + old_val;
+    }
 	/*
 	 * public int sumOfNodes(Node root) {
 	 * 
