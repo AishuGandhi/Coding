@@ -1,0 +1,8 @@
+git init  -- allow git in folder
+git remote add origin 'clone url' --- origin where to push changes
+
+git push origin branch_name   --- push branch to origin remote
+
+git checkout -b branch_name   --- Create Branch
+
+git clone 'clone_url' --- to get repository details and files and projects from git 
